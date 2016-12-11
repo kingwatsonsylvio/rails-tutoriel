@@ -1,0 +1,23 @@
+<h1>Articles</h1>
+
+<% if flash[:notice] %>
+	<div class="alert alert-success">
+
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<ul>
+	<% @posts.each do |post| %>
+		<li>
+			<%= link_to post.name, post_path(post) %> -
+			<%= link_to 'editer', [:edit, post] %>	-
+			<%= link_to 'supprimer',post, method: :delete ,data: {confirm: 'vous etes sur de vouloir supprimer'} %>			
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to 'Créer un article', new_post_path %>
+
+
+

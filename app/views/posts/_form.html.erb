@@ -1,0 +1,7 @@
+<%= simple_form_for post do |f| %>
+
+	<%= f.input :name  %>
+	<%= f.input :content  %>
+	<%= f.button :submit, post.new_record? ? 'Creer' : 'Modifier' %>
+
+<% end %>
